@@ -1,7 +1,7 @@
 import { Order } from "@/types/Order";
 
 export async function createOrder(order: Omit<Order, "id">): Promise<Order> {
-  const response = await fetch("http://localhost:3001/orders", {
+  const response = await fetch("https://mock-backend-sqk5.onrender.com/orders", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
