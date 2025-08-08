@@ -13,7 +13,7 @@ export const useOrderStore = create<State>((set) => ({
   orders: [],
   fetchOrders: async () => {
     try {
-      const response = await fetch("http://localhost:3001/orders");
+      const response = await fetch("https://mock-backend-sqk5.onrender.com/orders");
       const data = await response.json();
       set({ orders: data });
     } catch (error) {
@@ -30,7 +30,7 @@ export const useOrderStore = create<State>((set) => ({
   },
   deleteOrderById: async (id: number) => {
     try {
-      await fetch(`http://localhost:3001/orders/${id}`, {
+      await fetch(`https://mock-backend-sqk5.onrender.com/orders/${id}`, {
         method: "DELETE",
       });
       set((state) => ({
